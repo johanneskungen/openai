@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://Hanovich-s-workspace-j2t7o9.eu-west-1.xata.sh/db/test",
+  "codegen": {
+    "output": "util/xata.js",
+    "moduleType": "esm"
+  }
+}

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&display=swap');
+
+.body{
+    color: #1b2735;
+    overflow-x: hidden;
+    background: #f1f3f5;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.hero{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.heading_a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
