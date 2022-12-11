@@ -27,7 +27,7 @@ function Hero() {
         </Link>
       </div>
       <div className={`absolute top-[5.7rem] z-[-2] ${h}`}>
-        <Image src={code_bg} className="h-full object-cover" />
+        <Image alt="code image" src={code_bg} className="h-full object-cover" />
         <div
           className={`bg-[#244355] w-screen relative bottom-[42vh] md:bottom-[55vh] opacity-60 ${h}`}
         ></div>

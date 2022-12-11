@@ -4,13 +4,13 @@ import Navbar from "./Navbar";
 
 function layout({ children }) {
   return (
-    <main>
-      <title></title>
+    <html>
+      <head></head>
       <body className="body">
         <Navbar />
         {children}
       </body>
-    </main>
+    </html>
   );
 }
 

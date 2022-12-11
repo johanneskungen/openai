@@ -44,7 +44,7 @@ async function RecentWork() {
               className="flex flex-col justify-between shadow-md min-h-[18rem] max-h-[26rem] p-3.5 rounded-lg bg-white"
             >
               <div className="h-full border flex items-center">
-                <Image src={images[index]} className="w-72 mx-auto"/>
+                <Image alt="recent work" src={images[index]} className="w-72 mx-auto"/>
               </div>
               <div>
                 <Link href={"/" + work.id} className="font-semibold text-lg">
