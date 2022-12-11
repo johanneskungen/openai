@@ -5,7 +5,7 @@ import code_bg from "../assets/code_bg.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
-const h = "h-[42vh] md:h-[55vh]";
+const h = "h-[34vh] lg:h-[62vh]";
 
 function Hero() {
   return (
@@ -29,7 +29,7 @@ function Hero() {
       <div className={`absolute top-[5.7rem] z-[-2] ${h}`}>
         <Image alt="code image" src={code_bg} className="h-full object-cover" />
         <div
-          className={`bg-[#244355] w-screen relative bottom-[42vh] md:bottom-[55vh] opacity-60 ${h}`}
+          className={`bg-[#244355] w-screen relative bottom-[34vh] lg:bottom-[62vh] opacity-60 ${h}`}
         ></div>
       </div>
     </section>

@@ -5,7 +5,9 @@ import Navbar from "./Navbar";
 function layout({ children }) {
   return (
     <html>
-      <head></head>
+      <head>
+        <title>JE Consulting Agency</title>
+      </head>
       <body className="body">
         <Navbar />
         {children}
