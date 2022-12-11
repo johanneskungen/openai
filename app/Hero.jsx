@@ -32,6 +32,7 @@ function Hero() {
           className={`bg-[#244355] w-screen relative bottom-[34vh] lg:bottom-[62vh] opacity-60 ${h}`}
         ></div>
       </div>
+      
     </section>
   );
 }
