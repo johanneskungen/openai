@@ -37,11 +37,11 @@ async function RecentWork() {
           <h1 className="text-2xl font-semibold">Recent Work</h1>
           <p className="italic">Sorted most recent</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-3 mt-6">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-6 lg:grid-cols-3 mt-6">
           {blogs.reverse().map((work, index) => (
             <div
               key={work.id}
-              className="flex flex-col justify-between shadow-md min-h-[18rem] max-h-[26rem] p-3.5 rounded-lg bg-white"
+              className="flex flex-col justify-between shadow-md min-h-[18rem] max-h-[26rem] p-6 lg:p-3.5 rounded-lg bg-white"
             >
               <div className="h-full border flex items-center">
                 <Image alt="recent work" src={images[index]} className="w-72 mx-auto"/>
