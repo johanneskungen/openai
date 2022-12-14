@@ -10,7 +10,6 @@ const getSingleBlog = async (id) => {
 }
 
 async function page({params: {blog}}) {
-  console.log(blog)
     const singleBlog = await getSingleBlog(blog)
   return (
     <div className='mt-24'>
