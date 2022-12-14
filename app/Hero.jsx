@@ -5,12 +5,12 @@ import code_bg from "../assets/code_bg.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
-const h = "h-[34vh] lg:h-[62vh]";
+const h = "h-[34vh] sm:h-[38vh] md:h-[62vh]";
 
 function Hero() {
   return (
     <section className={`w-screen ${h}`}>
-      <div className="text-white w-[32rem] mt-24 mx-auto">
+      <div className="text-white w-[32rem] mt-32 lg:mt-[10rem]  mx-auto">
         <h1 className="text-5xl font-bold">
           Website development made <span className="text-[#ff3471]">easy</span>.
         </h1>
@@ -29,7 +29,7 @@ function Hero() {
       <div className={`absolute top-[5.7rem] z-[-2] ${h}`}>
         <Image alt="code image" src={code_bg} className="h-full object-cover" />
         <div
-          className={`bg-[#244355] w-screen relative bottom-[34vh] lg:bottom-[62vh] opacity-60 ${h}`}
+          className={`bg-[#244355] w-screen relative bottom-[34vh] sm:bottom-[38vh] md:bottom-[62vh] opacity-60 ${h}`}
         ></div>
       </div>
       

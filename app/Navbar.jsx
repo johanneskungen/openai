@@ -16,13 +16,13 @@ function Navbar() {
         JeConsulting
       </Link>
       <section className="gap-12 font-semibold items-center flex">
-        <Link href="/#work" className="hover:text-[#ff3471] duration-150">
+        <Link href="#"onClick={() => window.location.href = "/#work"} className="hover:text-[#ff3471] duration-150">
           projects
         </Link>
         <Link className="hover:text-[#ff3471] duration-150" href="/about">
           about
         </Link>
-        <Link className="hover:text-[#ff3471] duration-150" href="/#contact">
+        <Link onClick={() => window.location.href = "/#contact"} className="hover:text-[#ff3471] duration-150" href="#">
           contact
         </Link>
       </section>
