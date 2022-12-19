@@ -1,14 +1,10 @@
 import React from "react";
-import RecentWork from './RecentWork'
-import ContactForm from "./ContactForm";
-import Hero from "./Hero";
+import AiComponent from "./AiComponent";
 
 function page() {
   return (
     <div>
-      <Hero />
-      <RecentWork />
-      <ContactForm/>
+      <AiComponent />
     </div>
   );
 }

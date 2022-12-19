@@ -13,10 +13,6 @@ html{
     scroll-behavior: smooth;
 }
 
-.hero{
-    font-family: 'Roboto Mono', monospace;
-}
-
-.heading_a{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.aiOutput{
+    white-space: pre-wrap;
 }
