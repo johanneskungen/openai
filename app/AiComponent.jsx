@@ -17,7 +17,6 @@ function AiComponent() {
       })
       .then((res) => {
         setAnswers(res)
-        console.log(res.data.text)
         setLoading(false)
       });
   };
@@ -27,12 +26,12 @@ function AiComponent() {
       <form onSubmit={(e) => {
         e.preventDefault()
         GetAnswers()
-      }} className="mx-auto mt-24 flex flex-row justify-center items-center w-[38rem]">
-        <input placeholder="Ask anything you like" className="rounded-sm shadow-lg p-2.5 m-4 w-[24rem]" value={input} onChange={e => setInput(e.target.value)}/>
-        <button className="hover:scale-105 duration-150 bg-green-500 p-2.5 rounded-sm shadow-lg font-bold text-white" type="submit">ask question</button>
+      }} className="mx-auto mt-24 gap-3 flex flex-row justify-center items-center w-[85vw]">
+        <input placeholder="ask anything you like" className="rounded-sm shadow-lg p-4 mb-6 w-[65vw] text-2xl" value={input} onChange={e => setInput(e.target.value)}/>
+        <button className="w-[20vw] hover:scale-105 duration-150 bg-green-500 p-4 rounded-sm shadow-lg mb-6 font-bold text-white text-xl" type="submit">ask question</button>
       </form>
-      <div className="w-[85vw] mx-auto bg-white shadow-lg rounded-md p-4">
-        {loading ? <p>loading...</p> : <code className="aiOutput">{answers.data && answers.data.text}</code>}
+      <div className="w-[85vw] mx-auto bg-white shadow-lg rounded-md text-2xl p-4">
+        {loading ? <p className="w-fit mx-auto font-semibold text-3xl">loading...</p> : <code className="aiOutput">{answers.data && answers.data.text}</code>}
       </div>
     </div>
   );
