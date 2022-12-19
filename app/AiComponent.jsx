@@ -1,10 +1,10 @@
-"use client";
-
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useAiContext } from './Context'
 
 function AiComponent() {
+  const {setAiResponses} = useAiContext()
   const [answers, setAnswers] = useState("");
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState("");
@@ -21,6 +21,10 @@ function AiComponent() {
       });
   };
 
+  const saveResponse = (res) => {
+    res && setAiResponses(prev => prev ? [...prev, res.data.text]: [res.data.text] )
+  }
+
   return (
     <div>
       <form onSubmit={(e) => {
@@ -31,8 +35,10 @@ function AiComponent() {
         <button className="w-[20vw] hover:scale-105 duration-150 bg-green-500 p-4 rounded-sm shadow-lg mb-6 font-bold text-white text-xl" type="submit">ask question</button>
       </form>
       <div className="w-[85vw] mx-auto bg-white shadow-lg rounded-md text-2xl p-4">
+      <button className="bg-green-500 text-white font-semibold px-4 py-1 rounded-sm shadow-md" onClick={() => saveResponse(answers)}>save</button>
         {loading ? <p className="w-fit mx-auto font-semibold text-3xl">loading...</p> : <code className="aiOutput">{answers.data && answers.data.text}</code>}
       </div>
+      
     </div>
   );
 }
