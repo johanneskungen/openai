@@ -26,7 +26,7 @@ function AiComponent() {
       <form onSubmit={(e) => {
         e.preventDefault()
         GetAnswers()
-      }} className="mx-auto mt-24 gap-3 flex flex-row justify-center items-center w-[85vw]">
+      }} className="mx-auto mt-72 gap-3 flex flex-row justify-center items-center w-[85vw]">
         <input placeholder="ask anything you like" className="rounded-sm shadow-lg p-4 mb-6 w-[65vw] text-2xl" value={input} onChange={e => setInput(e.target.value)}/>
         <button className="w-[20vw] hover:scale-105 duration-150 bg-green-500 p-4 rounded-sm shadow-lg mb-6 font-bold text-white text-xl" type="submit">ask question</button>
       </form>
