@@ -12,7 +12,7 @@ function AiComponent() {
   const GetAnswers = () => {
     setLoading(true)
     axios
-      .post("http://localhost:3000/api/openai", {
+      .post("/api/openai", {
         text: input,
       })
       .then((res) => {
