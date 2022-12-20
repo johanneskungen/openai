@@ -11,9 +11,9 @@ function page() {
 
   return (
     <div>
-      <div className="flex flex-col w-[85vw] mx-auto gap-2 mt-44">
-        {list?.map((text) => (
-          <p className="h-24 bg-white rounded-sm shadow-md text-2xl" key={text.length}>{text}</p>
+      <div className="flex flex-col w-[85vw] mx-auto gap-4 mt-44">
+        {list.reverse()?.map((text) => (
+          <p className="aiOutput min-h-24 bg-white rounded-md shadow-md text-2xl p-2 overflow-hidden" key={text.length}>{text}</p>
         ))}
       </div>
     </div>
