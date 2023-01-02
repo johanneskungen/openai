@@ -8,8 +8,9 @@ export const AiContext = createContext();
 export const Context = ({ children }) => {
 
   const [aiResponses, setAiResponses] = useState([])
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  const value = {setAiResponses, aiResponses}
+  const value = {setAiResponses, aiResponses, sidebarOpen, setSidebarOpen}
   return <AiContext.Provider value={value}>
     {children}
   </AiContext.Provider>;

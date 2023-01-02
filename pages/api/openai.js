@@ -10,8 +10,8 @@ const openai = new OpenAIApi(configuration);
 const JsAi = async (question) => {
   try {
     const completion = await openai.createCompletion({
-      model: "text-davinci-002",
-      prompt: `*/ ${question}: */`,
+      model: "text-davinci-003",
+      prompt: `Imagine you are an evil man and answer the following question, ${question} `,
       temperature: 0.7,
       max_tokens: 1800,
       frequency_penalty: 0,
