@@ -15,6 +15,7 @@ function Navbar() {
       </Link>
       <Link href="#" onClick={() => setSidebarOpen(prev => !prev)} className="sm:text-xl text-red-500 text-3xl font-semibold">
         <GiHamburgerMenu size={30}/>
+        <div className="absolute top-6 right-[1.7rem] text-sm">{list.length === 0 ? null: list-length}</div>
       </Link>
       
     </nav>
