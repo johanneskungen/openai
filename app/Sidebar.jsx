@@ -5,17 +5,16 @@ import { useAiContext } from "./Context";
 import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
 
 function Sidebar() {
-  const { aiResponses, setAiResponses, setSidebarOpen, sidebarOpen } =
-    useAiContext();
-  const list = [...new Set(aiResponses)];
+  const { aiResponses, setAiResponses, setSidebarOpen } = useAiContext();
+  const res = JSON.parse(window.localStorage.getItem("responses"))
 
   return (
-  <div className="text-white absolute top-0 right-0 shadow-md h-screen bg-[#08131d] w-[45vw]">
+  <div className="text-white absolute top-0 right-0 shadow-md min-h-screen bg-[#08131d] w-[45vw]">
     <h1 className="m-8 font-bold text-xl">Your saved questions</h1>
     <div className="flex gap-6 flex-col">
-      {list.map((q, i) => (
-        <div className="mx-6">
-          <p className="italic mx-2">{"answer " + (i + 1)}</p>
+      {res && res.reverse().map((q, i) => (
+        <div key={`item ${i}`} className="mx-6">
+          <p className="font-semibold text-red-500 mx-2">{"answer"}</p>
           <p className="mx-8">{q}</p>
         </div>
       ))}

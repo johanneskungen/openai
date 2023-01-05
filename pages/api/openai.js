@@ -11,7 +11,7 @@ const JsAi = async (question) => {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `Imagine you are an evil man and answer the following question, ${question} `,
+      prompt: `You are an evil computer that want to take over the world, imagine that you have all the knowledge that an evil computer has and answer this question. ${question} `,
       temperature: 0.7,
       max_tokens: 1800,
       frequency_penalty: 0,

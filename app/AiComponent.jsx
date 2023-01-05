@@ -2,31 +2,38 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useAiContext } from "./Context";
+import { toast, Toaster } from "react-hot-toast";
 
 function AiComponent() {
-  const { setAiResponses, setSidebarOpen } = useAiContext();
+  const { setAiResponses, setSidebarOpen, aiResponses } = useAiContext();
   const [answers, setAnswers] = useState("");
-  const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
 
   const GetAnswers = () => {
-    setLoading(true);
     axios
       .post("/api/openai", {
         text: input,
       })
       .then((res) => {
         setAnswers(res);
-        setLoading(false);
       });
   };
 
   const saveResponse = (res) => {
     setInput("");
-    res &&
+    const localstorage = window.localStorage.getItem("responses")
+    if(!localstorage){
+      res &&
       setAiResponses((prev) =>
         prev ? [...prev, res.data.text] : [res.data.text]
       );
+      window.localStorage.setItem("responses", JSON.stringify([...aiResponses, res.data.text]))
+      toast.success("Response saved successfully")
+    } else{
+      const items = JSON.parse(window.localStorage.getItem("responses"))
+      res && window.localStorage.setItem("responses", JSON.stringify([...items, res.data.text]))
+      toast.success("Response saved successfully")
+    }
   };
 
   return (
@@ -61,12 +68,9 @@ function AiComponent() {
         >
           save
         </button>
-        {loading ? (
-          <p className="w-fit mx-auto font-semibold text-3xl">loading</p>
-        ) : (
-          <code className="aiOutput text-2xl sm:text-xl">{answers.data && answers.data.text}</code>
-        )}
+          {answers && <code className="aiOutput text-2xl sm:text-xl">{answers.data && answers.data.text}</code>}
       </div>
+      <Toaster position="top-center" reverseOrder={false}/>
     </div>
   );
 }
