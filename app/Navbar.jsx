@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className="items-center flex justify-between p-8 px-18">
       <Link href={"/"} className="font-bold sm:text-2xl text-5xl text-red-500">
-        Terroscope
+        Horrorscope
       </Link>
       <Link href="#" onClick={() => setSidebarOpen(prev => !prev)} className="sm:text-xl text-red-500 text-3xl font-semibold">
         <GiHamburgerMenu size={30}/>

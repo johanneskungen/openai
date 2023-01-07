@@ -3,24 +3,30 @@ import axios from "axios";
 import { useState } from "react";
 import { useAiContext } from "./Context";
 import { toast, Toaster } from "react-hot-toast";
+import {AiFillHeart } from 'react-icons/ai'
+import { motion } from "framer-motion";
 
 function AiComponent() {
   const { setAiResponses, setSidebarOpen, aiResponses } = useAiContext();
   const [answers, setAnswers] = useState("");
+  const [loading, setLoading] = useState(false)
   const [input, setInput] = useState("");
 
   const GetAnswers = () => {
+    setLoading(true)
     axios
       .post("/api/openai", {
         text: input,
       })
       .then((res) => {
         setAnswers(res);
+        setLoading(false)
       });
   };
 
   const saveResponse = (res) => {
     setInput("");
+    setAnswers("")
     const localstorage = window.localStorage.getItem("responses")
     if(!localstorage){
       res &&
@@ -37,7 +43,7 @@ function AiComponent() {
   };
 
   return (
-    <div onClick={() => setSidebarOpen(false)} className="sm:mt-[13rem]">
+    <div onClick={() => setSidebarOpen(false)} className="mt-[9rem] xl:mt-[13rem] mb-12">
       <h1 className="mb-44 sm:mb-12 text-8xl sm:text-7xl lg:text-6xl font-bold text-center text-red-500">
         Ask about our future
       </h1>
@@ -62,13 +68,13 @@ function AiComponent() {
         </button>
       </form>
       <div className="w-[85vw] lg:w-[65vw] mx-auto bg-black shadow-lg rounded-md text-2xl p-4">
-        <button
-          className="bg-red-500 text-white font-semibold px-4 py-1 rounded-sm shadow-md"
+        {answers && <button
+          className="bg-red-500 text-white font-semibold px-4 py-1 rounded-sm shadow-md hover:scale-110 duration-75"
           onClick={() => saveResponse(answers)}
         >
-          save
-        </button>
-          {answers && <code className="aiOutput text-2xl sm:text-xl">{answers.data && answers.data.text}</code>}
+          <AiFillHeart />
+        </button>}
+          {loading ? <motion.div animate={{scale: [1.4, 0.8, 1.4], transition: { duration: 1, repeat: 500, type: "spring", stiffness: 100 }}} className="w-32 h-32 rounded-full bg-red-500 mx-auto m-4"></motion.div> : <code className="aiOutput text-2xl sm:text-xl">{answers.data && answers.data.text}</code>}
       </div>
       <Toaster position="top-center" reverseOrder={false}/>
     </div>

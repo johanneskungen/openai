@@ -7,7 +7,7 @@ function layout({ children }) {
   return (
     <html>
       <head>
-        <title>Terroscope</title>
+        <title>Horrorscope</title>
       </head>
       <body className="body">
         <Context>
